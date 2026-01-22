@@ -1,0 +1,239 @@
+{
+  "info": {
+    "_postman_id": "b551c8b3-07a5-41c8-bae0-3a3d8abfbb2b",
+    "name": "SUPPORT-TICKETS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "30869581"
+  },
+  "item": [
+    {
+      "name": "Registro",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"usuario@ejemplo.com\",\r\n    \"password\": \"miPassword123\",\r\n    \"name\": \"Juan Pérez\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"usuario@ejemplo.com\",\r\n    \"password\": \"miPassword123\",\r\n    \"name\": \"Juan Pérez\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear ticket",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjkwNTEzMjUsImV4cCI6MTc2OTA1NDkyNSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidXN1YXJpb0BlamVtcGxvLmNvbSJ9.RnR7OVGy4txFPrRtT0I5u1Dg7t4Sv8Ihky3b2VW5PAXruCRDkAjQgCc9xgEOYKfwxPfyXLRlzlVsTfDTgj_ria6y5G0gJYuEbpn-hH86I9-_dsvnnq2OreOJQJXauDS9gkJZZonEHGSczDMV5OG33bffOMZML-eByJ4eWmJuCLijTY2gBulaVvZn-0v6L4sJHjita3vw0eaxrPjLMnTM79q8uhVZ_2SlJQsqK2xEVTHC1kiJkmtGY4njlxJRpR-GZ1XGz32ech2Rz4hO3Fzpd_qPpTnkI2qz85fM8HmmhYAOiXC1YkrWWIAgW2VS6Q9pYwfuSdT882y2CSh-GZfsvQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Error al guardar formulario\",\r\n    \"description\": \"Cuando intento guardar el formulario de contacto, aparece un error 500 en la consola del navegador\",\r\n    \"priority\": \"high\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tickets",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tickets"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ver ticket",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjkwNTEzMjUsImV4cCI6MTc2OTA1NDkyNSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidXN1YXJpb0BlamVtcGxvLmNvbSJ9.RnR7OVGy4txFPrRtT0I5u1Dg7t4Sv8Ihky3b2VW5PAXruCRDkAjQgCc9xgEOYKfwxPfyXLRlzlVsTfDTgj_ria6y5G0gJYuEbpn-hH86I9-_dsvnnq2OreOJQJXauDS9gkJZZonEHGSczDMV5OG33bffOMZML-eByJ4eWmJuCLijTY2gBulaVvZn-0v6L4sJHjita3vw0eaxrPjLMnTM79q8uhVZ_2SlJQsqK2xEVTHC1kiJkmtGY4njlxJRpR-GZ1XGz32ech2Rz4hO3Fzpd_qPpTnkI2qz85fM8HmmhYAOiXC1YkrWWIAgW2VS6Q9pYwfuSdT882y2CSh-GZfsvQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/tickets/019be3af-6f9f-787f-8a2d-53f07fdb38f6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tickets",
+            "019be3af-6f9f-787f-8a2d-53f07fdb38f6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar ticket",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjkwNTEzMjUsImV4cCI6MTc2OTA1NDkyNSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidXN1YXJpb0BlamVtcGxvLmNvbSJ9.RnR7OVGy4txFPrRtT0I5u1Dg7t4Sv8Ihky3b2VW5PAXruCRDkAjQgCc9xgEOYKfwxPfyXLRlzlVsTfDTgj_ria6y5G0gJYuEbpn-hH86I9-_dsvnnq2OreOJQJXauDS9gkJZZonEHGSczDMV5OG33bffOMZML-eByJ4eWmJuCLijTY2gBulaVvZn-0v6L4sJHjita3vw0eaxrPjLMnTM79q8uhVZ_2SlJQsqK2xEVTHC1kiJkmtGY4njlxJRpR-GZ1XGz32ech2Rz4hO3Fzpd_qPpTnkI2qz85fM8HmmhYAOiXC1YkrWWIAgW2VS6Q9pYwfuSdT882y2CSh-GZfsvQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Error al guardar formulario\",\r\n    \"description\": \"Cuando intento guardar el formulario de contacto, aparece un error 500 en la consola del navegador\",\r\n    \"priority\": \"critical\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tickets/019be3af-6f9f-787f-8a2d-53f07fdb38f6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tickets",
+            "019be3af-6f9f-787f-8a2d-53f07fdb38f6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar tickets",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjkwNTEzMjUsImV4cCI6MTc2OTA1NDkyNSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidXN1YXJpb0BlamVtcGxvLmNvbSJ9.RnR7OVGy4txFPrRtT0I5u1Dg7t4Sv8Ihky3b2VW5PAXruCRDkAjQgCc9xgEOYKfwxPfyXLRlzlVsTfDTgj_ria6y5G0gJYuEbpn-hH86I9-_dsvnnq2OreOJQJXauDS9gkJZZonEHGSczDMV5OG33bffOMZML-eByJ4eWmJuCLijTY2gBulaVvZn-0v6L4sJHjita3vw0eaxrPjLMnTM79q8uhVZ_2SlJQsqK2xEVTHC1kiJkmtGY4njlxJRpR-GZ1XGz32ech2Rz4hO3Fzpd_qPpTnkI2qz85fM8HmmhYAOiXC1YkrWWIAgW2VS6Q9pYwfuSdT882y2CSh-GZfsvQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/tickets",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tickets"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar ticket",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjkwNTEzMjUsImV4cCI6MTc2OTA1NDkyNSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidXN1YXJpb0BlamVtcGxvLmNvbSJ9.RnR7OVGy4txFPrRtT0I5u1Dg7t4Sv8Ihky3b2VW5PAXruCRDkAjQgCc9xgEOYKfwxPfyXLRlzlVsTfDTgj_ria6y5G0gJYuEbpn-hH86I9-_dsvnnq2OreOJQJXauDS9gkJZZonEHGSczDMV5OG33bffOMZML-eByJ4eWmJuCLijTY2gBulaVvZn-0v6L4sJHjita3vw0eaxrPjLMnTM79q8uhVZ_2SlJQsqK2xEVTHC1kiJkmtGY4njlxJRpR-GZ1XGz32ech2Rz4hO3Fzpd_qPpTnkI2qz85fM8HmmhYAOiXC1YkrWWIAgW2VS6Q9pYwfuSdT882y2CSh-GZfsvQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/tickets/019be3af-6f9f-787f-8a2d-53f07fdb38f6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tickets",
+            "019be3af-6f9f-787f-8a2d-53f07fdb38f6"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
