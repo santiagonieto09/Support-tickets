@@ -1,0 +1,53 @@
+services:
+  php:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    container_name: tickets_php
+    volumes:
+      - .:/var/www/html
+    networks:
+      - tickets_network
+    depends_on:
+      - database
+    environment:
+      DATABASE_URL: postgresql://tickets_user:tickets_password@database:5432/tickets_db?serverVersion=16&charset=utf8
+
+  nginx:
+    image: nginx:alpine
+    container_name: tickets_nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - tickets_network
+    depends_on:
+      - php
+
+  database:
+    image: postgres:16-alpine
+    container_name: tickets_postgres
+    environment:
+      POSTGRES_DB: tickets_db
+      POSTGRES_USER: tickets_user
+      POSTGRES_PASSWORD: tickets_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - tickets_network
+    healthcheck:
+      test: ["CMD", "pg_isready", "-d", "tickets_db", "-U", "tickets_user"]
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+
+networks:
+  tickets_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
